@@ -5,9 +5,9 @@ import Cart from "./pages/Cart"
 const routes = [
     {
         path:"/",
-        element:<Index/>
-    },
-    {
+        element:<Index/>,
+        children:[
+              {
         path:"home",
         element: <Home/>
     },
@@ -19,5 +19,8 @@ const routes = [
         path: "/shop",
         element: <Shop/>
     }
+        ]
+    },
+  
 ]
 export default routes
