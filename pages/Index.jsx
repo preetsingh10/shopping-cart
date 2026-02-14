@@ -4,11 +4,11 @@ import { Outlet } from "react-router-dom";
 
 function Index(){
     
-const [useCart, setCart] = useState(["apple"])
+const [useCart, setCart] = useState([])
     return (
         <>
-        <NavBar/>
-       <Outlet context={[useCart]}/> 
+        <NavBar cartLength ={useCart.length}/>
+       <Outlet context={[useCart, setCart]}/> 
         </>
     )
 }
