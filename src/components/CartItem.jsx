@@ -2,8 +2,18 @@ import { useOutletContext } from "react-router-dom"
 function CartItem({ item }) {
     const [useCart, setCart] = useOutletContext()
     function remove(itemToBeRemoved) {
-        const newData = useCart.filter((cartItem) => cartItem !== itemToBeRemoved)
-        setCart([...newData])
+        if (itemToBeRemoved.times === 1) {
+            const newData = useCart.filter((cartItem) => cartItem.id !== itemToBeRemoved.id)
+            setCart([...newData])
+        } else {
+            const updatedCart = useCart.map((item) => {
+                if (item.id === itemToBeRemoved.id) {
+                    return { ...item, times: item.times - 1 }
+                }
+                return item
+            })
+            setCart(updatedCart)
+        }
     }
     return (
         <div>

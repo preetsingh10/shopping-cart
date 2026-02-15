@@ -6,13 +6,13 @@ function Card({ item }) {
     function addToCart(itemToBeAdded) {
         const alreadyPresent = (item)=> item.id === itemToBeAdded.id
         if (useCart.some(alreadyPresent)) {
-            useCart.map(cartItem => {
+           const updatedCart = useCart.map(cartItem => {
                 if (cartItem.id === itemToBeAdded.id) {
-                    cartItem.times += 1
-                    setCart([...useCart])
-                    return
+                    return {...cartItem, times: cartItem.times + 1}
                 }
+                return cartItem
             })
+            setCart(updatedCart)
         } else {
             setCart([...useCart, itemToBeAdded])
         }
