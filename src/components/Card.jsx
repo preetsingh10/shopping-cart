@@ -6,18 +6,22 @@ function Card({ item }) {
     const [useCart, setCart] = useOutletContext()
     const [useTimes, setTimes] = useState(1)
     function addToCart(itemToBeAdded) {
+        if(useTimes < 1){
+            setTimes(1)
+            return
+        }
         const alreadyPresent = (item) => item.id === itemToBeAdded.id
         if (useCart.some(alreadyPresent)) {
             const updatedCart = useCart.map(cartItem => {
                 if (cartItem.id === itemToBeAdded.id) {
-                    return { ...cartItem, times: cartItem.times + useTimes }
+                    return { ...cartItem, times: cartItem.times + Number(useTimes )}
                 }
                 return cartItem
             })
             setCart(updatedCart)
             setTimes(1)
         } else {
-            itemToBeAdded.times += useTimes 
+            itemToBeAdded.times += Number(useTimes )
             setCart([...useCart, itemToBeAdded])
             setTimes(1)
         }
