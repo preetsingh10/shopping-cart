@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Card from "../src/components/Card"
+import styles from "./Shop.module.css"
 function Shop() {
     const [useProducts, setProducts] = useState([
         { name: 'a', discription: "apple", id:1 ,src:"https://picsum.photos/300/200", times:0},
@@ -9,6 +10,7 @@ function Shop() {
     return (
         <>
             <h1>Shop Page</h1>
+            <div className={styles.cardContainer}>
             {
                 useProducts.map(item => {
                     return (
@@ -16,6 +18,9 @@ function Shop() {
                     )
                 })
             }
+
+            </div>
+
         </>
     )
 }

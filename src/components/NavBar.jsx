@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom"
 import styles from "./NavBar.module.css"
-function NavBar({cartLength}) {
+function NavBar({ cartLength }) {
     return (
         <div className={styles.container}>
-            <h1>Shopping Cart</h1>
+            <Link to={'/home'}>
+                <h1>Shopping Cart</h1>
+            </Link>
             <div className={styles.ulDiv}>
                 <ul>
-                    <Link to={'/home'}> <li>Home</li></Link>
-
                     <Link to={'shop'}><li>Shop</li></Link>
                     <Link to={'cart'}><li>Cart {cartLength}</li></Link>
                 </ul>

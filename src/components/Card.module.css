@@ -1,0 +1,9 @@
+.card{
+    display: flex;
+}
+.cardPropertiesContainer{
+
+}
+.quantityUpdater input{
+    width: 20px;
+}
