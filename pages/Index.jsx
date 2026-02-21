@@ -1,7 +1,6 @@
 import { useState } from "react";
-import NavBar from "../src/components/Navbar";
+import NavBar from "../src/components/NavBar";
 import { Outlet } from "react-router-dom";
-
 function Index() {
 
     const [useCart, setCart] = useState([])
