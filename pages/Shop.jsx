@@ -3,11 +3,7 @@ import Card from "../src/components/Card"
 import styles from "./Shop.module.css"
 import Loading from "../src/components/Loading"
 function Shop() {
-    const [useProducts, setProducts] = useState([
-        { name: 'a', discription: "apple", id: 1, src: "https://picsum.photos/300/200", times: 0 },
-        { name: 'b', discription: "banana", id: 2, src: "https://picsum.photos/300/200", times: 0 },
-        { name: 'c', discription: "cat", id: 3, src: "https://picsum.photos/300/200", times: 0 }
-    ])
+    const [products, setProducts] = useState()
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -18,8 +14,9 @@ function Shop() {
                     throw new Error("Response is not okay from the server")
                 }
                 const data = await response.json()
-                console.log(data)
-                setProducts(data)
+                const updatedData = data.map(item=> {return {...item, price:Math.ceil(item.price)}})
+                console.log(updatedData)
+                setProducts(updatedData)
                 setLoading(false)
             } catch (error) {
                 console.log(error)
@@ -28,6 +25,7 @@ function Shop() {
         }
 
         fetchData()
+   
     }, [])
 
     return (
@@ -37,7 +35,7 @@ function Shop() {
             {loading == false &&
                 <div className={styles.cardContainer}>
                     {
-                        useProducts.map(item => {
+                        products.map(item => {
                             return (
                                 <Card key={item.id} item={item} />
                             )

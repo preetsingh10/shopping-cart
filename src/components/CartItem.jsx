@@ -1,7 +1,7 @@
 import CartUpdater from "./CartUpdater"
 import { useOutletContext } from "react-router-dom"
 
-function CartItem({ item }) {
+function CartItem({ item, styles }) {
     const [useCart, setCart] = useOutletContext()
     if (item.times < 1) {
         const updatedCart = useCart.map((cartItem) => cartItem.id === item.id ? { ...cartItem, times: 1 } : cartItem)
@@ -26,14 +26,22 @@ function CartItem({ item }) {
         setCart(updatedCard)
     }
     return (
-        <div>
-
-            <span>{item.times} x <img src="src/assets/placeholder.jpg" height={"100px"} width={"100px"} alt="" /></span>
-            <h2>{item.name}</h2>
-            <h2>{item.id}</h2>
-            <h2>{item.discription}</h2>
-            <CartUpdater incrementor={addTimes} decrementor={subtractTimes} changeTimesByInput={changeTimesByInput} quantity={item.times} />
-            <button onClick={() => remove(item)}>Remove</button>
+        <div className={styles.productCard}>
+            <div className={styles.flexContainer} >
+                <div className={styles.timesContainer}>
+                    <span>{item.times} X </span>
+                </div>
+                <div>
+                    <img src={item.image} height={"100px"} width={"100px"} alt="" />
+                </div>
+            </div>
+            <div>
+                <h2>{item.title}</h2>
+                <span>{item.description}</span>
+                <span>${item.price}</span>
+                <CartUpdater incrementor={addTimes} decrementor={subtractTimes} changeTimesByInput={changeTimesByInput} quantity={item.times} styles={styles} />
+                <button onClick={() => remove(item)}>Remove</button>
+            </div>
         </div>
     )
 }

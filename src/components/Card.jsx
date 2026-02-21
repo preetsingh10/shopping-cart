@@ -3,6 +3,7 @@ import { useOutletContext } from "react-router-dom"
 import QuantityUpdater from "./quantityUpdater"
 import styles from "./Card.module.css"
 function Card({ item }) {
+    
 
     const [useCart, setCart] = useOutletContext()
     const [useTimes, setTimes] = useState(1)
@@ -22,8 +23,9 @@ function Card({ item }) {
             setCart(updatedCart)
             setTimes(1)
         } else {
-            itemToBeAdded.times += Number(useTimes )
-            setCart([...useCart, itemToBeAdded])
+            const product = {...itemToBeAdded, times: 0}
+            product.times += Number(useTimes )
+            setCart([...useCart, product])
             setTimes(1)
         }
     }
@@ -32,10 +34,10 @@ function Card({ item }) {
     return (
 
         <div className={styles.card}>
-            <img src={item.image} height={"150px"} width={"150px"} alt="" />
+            <img src={item.image} height={"200px"} width={"200px"} alt="" />
             <div className={styles.cardPropertiesContainer}>
             <h2>{item.title}</h2>
-            <h2>${item.price}</h2>
+            <span>${item.price}</span>
             <QuantityUpdater useTimes={useTimes} setTimes= {setTimes} item={item} styles={styles} />
             <button onClick={() => addToCart(item)} className="AddToCartBttn">Add To Cart</button>
             </div>

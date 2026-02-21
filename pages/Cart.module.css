@@ -1,0 +1,29 @@
+.cartPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cartProductContainer{
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    gap: 20px;
+}
+.productCard{
+    display: flex;
+    gap: 10px;
+}
+.quantityUpdater {
+    width: 20px;
+}
+.flexContainer{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+ 
+    min-width: fit-content;
+}
+.timesContainer{
+    min-width: fit-content;
+}
