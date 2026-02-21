@@ -9,12 +9,13 @@ function Shop() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await fetch("https://fakestoreapi.com/products")
+                const response = await fetch("https://dummyjson.com/products")
                 if (!response.ok) {
                     throw new Error("Response is not okay from the server")
                 }
                 const data = await response.json()
-                const updatedData = data.map(item=> {return {...item, price:Math.ceil(item.price)}})
+                console.log(data.products)
+                const updatedData = await data.products.map(item=> {return {...item, price:Math.ceil(item.price)}})
                 console.log(updatedData)
                 setProducts(updatedData)
                 setLoading(false)

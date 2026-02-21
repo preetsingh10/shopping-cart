@@ -32,12 +32,13 @@ function CartItem({ item, styles }) {
                     <span>{item.times} X </span>
                 </div>
                 <div>
-                    <img src={item.image} height={"100px"} width={"100px"} alt="" />
+                    <img src={item.images} height={"100px"} width={"100px"} alt="" />
                 </div>
             </div>
             <div>
                 <h2>{item.title}</h2>
                 <span>{item.description}</span>
+                <br />
                 <span>${item.price}</span>
                 <CartUpdater incrementor={addTimes} decrementor={subtractTimes} changeTimesByInput={changeTimesByInput} quantity={item.times} styles={styles} />
                 <button onClick={() => remove(item)}>Remove</button>

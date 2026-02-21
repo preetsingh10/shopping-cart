@@ -1,10 +1,45 @@
 .card{
     display: flex;
     gap: 10px;
+    border: 1px solid rgb(193, 190, 190) ;
+    border-radius: 15px;
+    min-height: fit-content;
 }
 .cardPropertiesContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
 
 }
-.quantityUpdater input{
+.quantityUpdaterContainer{
+    display: flex;
+    gap: 2px;
+    width: 2rem;
+}
+.quantityUpdaterContainer input{
     width: 20px;
+}
+.addToCartBtn, .quantityUpdaterBtns{
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 7px;
+  
+    cursor: pointer;
+
+}
+.quantityUpdaterBtns{
+    
+padding: 5px 10px;
+
+}
+.addToCartBtn:hover{
+    background-color: white;
+    color: black;
+}
+.quantityUpdaterBtns:hover{
+   background-color: white;
+    color: black; 
 }

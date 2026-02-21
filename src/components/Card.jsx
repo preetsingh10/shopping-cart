@@ -34,12 +34,12 @@ function Card({ item }) {
     return (
 
         <div className={styles.card}>
-            <img src={item.image} height={"200px"} width={"200px"} alt="" />
+            <img src={item.images[0]} height={"200px"} width={"200px"} alt="" />
             <div className={styles.cardPropertiesContainer}>
             <h2>{item.title}</h2>
             <span>${item.price}</span>
             <QuantityUpdater useTimes={useTimes} setTimes= {setTimes} item={item} styles={styles} />
-            <button onClick={() => addToCart(item)} className="AddToCartBttn">Add To Cart</button>
+            <button  onClick={() => addToCart(item)} className={styles.addToCartBtn}>Add To Cart</button>
             </div>
         </div>
     )
