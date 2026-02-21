@@ -1,5 +1,3 @@
-import NavBar from "../src/components/Navbar"
-
 function Home(){
     return(
         <>
