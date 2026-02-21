@@ -8,11 +8,23 @@
 }
 body{
   padding: 0;
-  margin: 0;
+  margin: 1rem;
 }
 
 a{
 text-decoration: none;
 color: inherit;
 }
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 

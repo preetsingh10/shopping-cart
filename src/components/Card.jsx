@@ -32,10 +32,10 @@ function Card({ item }) {
     return (
 
         <div className={styles.card}>
-            <img src="src/assets/placeholder.jpg" height={"150px"} width={"150px"} alt="" />
+            <img src={item.image} height={"150px"} width={"150px"} alt="" />
             <div className={styles.cardPropertiesContainer}>
-            <h2>{item.name}</h2>
-            <p>{item.discription}</p>
+            <h2>{item.title}</h2>
+            <h2>${item.price}</h2>
             <QuantityUpdater useTimes={useTimes} setTimes= {setTimes} item={item} styles={styles} />
             <button onClick={() => addToCart(item)} className="AddToCartBttn">Add To Cart</button>
             </div>
