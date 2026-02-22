@@ -31,7 +31,7 @@ function Shop() {
 
     return (
         <>
-            <h1>Shop Page</h1>
+            <h1>Our Store</h1>
             {loading && <Loading />}
             {loading == false &&
                 <div className={styles.cardContainer}>
