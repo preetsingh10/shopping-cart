@@ -8,7 +8,7 @@ const routes = [
         element:<Index/>,
         children:[
               {
-        path:"home",
+        index: true,
         element: <Home/>
     },
     {
@@ -18,6 +18,10 @@ const routes = [
     {
         path: "/shop",
         element: <Shop/>
+    },
+    {
+        path: "/home",
+        element: <Home/>
     }
         ]
     },
