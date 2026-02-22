@@ -1,6 +1,6 @@
 # Shopping Cart Project 
 
-## Technologies User:
+## Technologies Used:
 - React
 - React Router
 - Vite for Bundling
