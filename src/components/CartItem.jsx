@@ -32,7 +32,7 @@ function CartItem({ item, styles }) {
                     <span>{item.times} X </span>
                 </div>
                 <div>
-                    <img src={item.images} height={"100px"} width={"100px"} alt="" />
+                    <img src={item.images[0]} height={"100px"} width={"100px"} alt="" />
                 </div>
             </div>
             <div>
