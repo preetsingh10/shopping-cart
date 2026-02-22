@@ -27,3 +27,27 @@
 .timesContainer{
     min-width: fit-content;
 }
+.quantityUpdaterContainer{
+    display: flex;
+    gap: 2px;
+    width: 2rem;
+}
+.quantityUpdaterContainer input{
+    width: 20px;
+}
+.quantityUpdaterBtns, .removeFromCartBtn{
+      background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 7px;
+  
+    cursor: pointer;
+}
+.quantityUpdaterBtns{
+    padding: 5px 10px;
+}
+.quantityUpdaterBtns:hover{
+   background-color: white;
+    color: black; 
+}

@@ -41,7 +41,8 @@ function CartItem({ item, styles }) {
                 <br />
                 <span>${item.price}</span>
                 <CartUpdater incrementor={addTimes} decrementor={subtractTimes} changeTimesByInput={changeTimesByInput} quantity={item.times} styles={styles} />
-                <button onClick={() => remove(item)}>Remove</button>
+                <br />
+                <button className={styles.removeFromCartBtn} onClick={() => remove(item)}>Remove</button>
             </div>
         </div>
     )
